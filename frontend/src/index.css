@@ -1,0 +1,191 @@
+/* ===========================
+   Base Styles
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #141414; /* Netflix-style dark */
+  color: #e6eef6;
+  min-height: 100vh;
+  line-height: 1.6;
+  font-size: 16px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===========================
+   Container
+=========================== */
+.app-container {
+  max-width: 980px;
+  margin: 32px auto;
+  padding: 24px;
+  background: rgba(20, 20, 20, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+.app-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 1);
+}
+
+/* ===========================
+   Navigation
+=========================== */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.nav a {
+  color: #ccc;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav a.active {
+  background: #e50914; /* Netflix red */
+  color: white;
+  font-weight: bold;
+}
+
+/* ===========================
+   Forms
+=========================== */
+.form {
+  display: grid;
+  gap: 14px;
+  max-width: 720px;
+}
+
+.input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #1c1c1c;
+  color: #fff;
+  outline: none;
+  font-size: 1rem;
+}
+
+.input:focus {
+  border-color: #e50914;
+  box-shadow: 0 0 8px rgba(229, 9, 20, 0.5);
+}
+
+/* ===========================
+   Cards
+=========================== */
+.card {
+  background: #1c1c1c;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(229, 9, 20, 0.5);
+}
+
+/* ===========================
+   Lists
+=========================== */
+.list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+  border-radius: 8px;
+  background: #222;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.list-item:hover {
+  background: #2c2c2c;
+}
+
+/* ===========================
+   Buttons (Netflix style)
+=========================== */
+.btn {
+  position: relative;
+  background: #e50914; /* Netflix red */
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.7);
+}
+
+/* ===========================
+   Small Helpers
+=========================== */
+.small {
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+.success {
+  color: #00c851;
+}
+
+.error {
+  color: #ff4444;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-container {
+    padding: 16px;
+  }
+
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}

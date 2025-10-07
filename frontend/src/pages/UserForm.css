@@ -1,0 +1,103 @@
+/* ===========================
+   User Form Styles (Netflix Style)
+=========================== */
+
+.user-form-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 40px auto;
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #e6eef6;
+}
+
+.user-form-container h2 {
+  color: #e50914; /* Netflix Red */
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 100%;
+}
+
+.user-form input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #e6eef6;
+  font-size: 16px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.user-form input:focus {
+  border-color: #e50914;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+.user-form button {
+  padding: 12px;
+  background: linear-gradient(135deg, #e50914, #ff4c4c);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.user-form button:hover {
+  transform: scale(1.05) translateY(-2px);
+  background: linear-gradient(135deg, #ff4c4c, #e50914);
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
+}
+
+.user-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.user-list li {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 16px;
+  color: #e6eef6;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-list li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+  .user-form-container {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  .user-form input,
+  .user-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .user-list li {
+    font-size: 14px;
+  }
+}

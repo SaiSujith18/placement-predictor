@@ -1,0 +1,133 @@
+/* ===========================
+   Admin Login Page Styles (Netflix Style)
+=========================== */
+
+.admin-login-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #e6eef6;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeSlideIn 1s forwards ease-in-out;
+}
+
+.admin-login-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.9);
+}
+
+.admin-login-title {
+  font-size: 2.4em;
+  text-align: center;
+  color: #e50914; /* Netflix Red */
+  margin-bottom: 20px;
+  font-weight: 800;
+  animation: titleFadeIn 1.2s ease forwards;
+}
+
+.admin-login-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, #e50914, #ff4c4c);
+  border-radius: 4px;
+  animation: gradientMove 6s ease infinite;
+}
+
+.admin-login-form label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 500;
+  color: #ccc;
+}
+
+.admin-login-form input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  color: #e6eef6;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-login-form input:focus {
+  border-color: #e50914;
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.4);
+}
+
+.admin-login-form button {
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  background: linear-gradient(135deg, #e50914, #ff4c4c);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.admin-login-form button:hover {
+  background: #b20710;
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(229, 9, 20, 0.5);
+}
+
+.error {
+  color: #ff4c4c;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ===========================
+   Animations
+=========================== */
+@keyframes fadeSlideIn {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes titleFadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 768px) {
+  .admin-login-container {
+    padding: 20px;
+  }
+
+  .admin-login-title {
+    font-size: 2em;
+  }
+
+  .admin-login-form input {
+    padding: 10px;
+  }
+}
