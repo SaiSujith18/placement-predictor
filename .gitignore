@@ -1,0 +1,11 @@
+node_modules
+
+.env
+
+package-lock.json
+
+a.json
+
+
+git config --global user.name "Sai Sujith"
+git config --global user.email "saisujith83@gmail.com"
