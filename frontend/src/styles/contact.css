@@ -1,0 +1,210 @@
+/* =========================
+   Contact Container
+========================= */
+.contact-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideIn 0.9s forwards ease-in-out;
+  transition: all 0.3s ease;
+}
+
+.contact-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   Title
+========================= */
+.contact-title {
+  font-size: 2.8em;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1f2937;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  animation: titleFadeIn 1s ease forwards;
+  position: relative;
+}
+
+.contact-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, #a855f7, #ec4899, #f97316);
+  border-radius: 4px;
+  animation: gradientMove 5s ease infinite;
+}
+
+/* =========================
+   Form Fields (Floating Labels)
+========================= */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+/* Floating labels */
+.contact-form label {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-size: 1em;
+  color: #666;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 18px 14px 14px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1.05em;
+  outline: none;
+  background: #fff;
+  transition: all 0.3s ease;
+  resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
+  transform: scale(1.02);
+}
+
+/* Float label on focus */
+.contact-form input:focus + label,
+.contact-form input:not(:placeholder-shown) + label,
+.contact-form textarea:focus + label,
+.contact-form textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 12px;
+  font-size: 0.85em;
+  color: #a855f7;
+  background: #fff;
+  padding: 0 6px;
+  border-radius: 6px;
+}
+
+/* =========================
+   Submit Button (Enhanced Glow)
+========================= */
+.btn-submit {
+  background: linear-gradient(135deg, #a855f7, #ec4899, #f97316);
+  background-size: 300% 300%;
+  color: #fff;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  transition: all 0.3s ease, transform 0.2s ease;
+  animation: gradientMove 6s ease infinite, glowPulse 2s infinite;
+  position: relative;
+  overflow: hidden;
+  grid-column: span 2;
+}
+
+.btn-submit:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 10px 25px rgba(236, 72, 153, 0.5);
+}
+
+/* Ripple effect on click */
+.btn-submit:active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 350%;
+  height: 350%;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.6s linear;
+  z-index: 1;
+}
+
+.btn-submit span {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes fadeSlideIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes titleFadeIn {
+  0% { opacity: 0; transform: translateY(-15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes ripple {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(236, 72, 153, 0.5), 0 0 20px rgba(168, 85, 247, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.8), 0 0 40px rgba(168, 85, 247, 0.6); }
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 24px;
+  }
+
+  .contact-title {
+    font-size: 2.2em;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-submit {
+    grid-column: span 1;
+    font-size: 1em;
+    padding: 14px;
+  }
+}

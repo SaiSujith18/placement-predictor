@@ -1,0 +1,130 @@
+/* ===========================
+   Admin Dashboard Styles (Netflix Style)
+=========================== */
+
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #e6eef6;
+}
+
+.admin-dashboard__sidebar {
+  width: 260px;
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  animation: fadeSlideIn 1s forwards ease-in-out;
+}
+
+.admin-dashboard__title {
+  font-size: 2em;
+  text-align: center;
+  color: #e50914; /* Netflix Red */
+  margin-bottom: 20px;
+  font-weight: 800;
+  animation: titleFadeIn 1.2s ease forwards;
+}
+
+.admin-dashboard__title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, #e50914, #ff4c4c);
+  border-radius: 4px;
+  animation: gradientMove 6s ease infinite;
+}
+
+.admin-dashboard__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-dashboard__nav-link {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #ccc;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.admin-dashboard__nav-link:hover {
+  background: rgba(229, 9, 20, 0.2);
+  color: white;
+}
+
+.admin-dashboard__nav-link.active {
+  background: #e50914;
+  color: white;
+  font-weight: bold;
+}
+
+.admin-dashboard__main {
+  flex: 1;
+  padding: 35px;
+  background: rgba(10, 10, 10, 0.95);
+  animation: fadeSlideIn 1s forwards ease-in-out;
+}
+
+.admin-dashboard__placeholder {
+  font-size: 1.2em;
+  color: #ccc;
+  text-align: center;
+  padding-top: 50px;
+}
+
+/* ===========================
+   Animations
+=========================== */
+@keyframes fadeSlideIn {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes titleFadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 992px) {
+  .admin-dashboard {
+    flex-direction: column;
+  }
+
+  .admin-dashboard__sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .admin-dashboard__main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-dashboard__title {
+    font-size: 1.8em;
+  }
+
+  .admin-dashboard__nav-link {
+    font-size: 0.95em;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,143 @@
+/* ===========================
+   FAQ Page Styles (Enhanced)
+=========================== */
+.faq-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+  animation: fadeSlideIn 1s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ===========================
+   Title
+=========================== */
+.faq-title {
+  font-size: 2.6em;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #1f2937;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  position: relative;
+  animation: titleFadeIn 1s ease forwards;
+}
+
+.faq-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, #a855f7, #ec4899, #f97316);
+  border-radius: 4px;
+  animation: gradientMove 6s ease infinite;
+}
+
+/* ===========================
+   FAQ Section
+=========================== */
+.faq-section {
+  background: rgba(249, 250, 251, 0.85);
+  padding: 22px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeSlideUp 0.6s ease forwards;
+  animation-delay: 0.2s;
+  transition: all 0.3s ease;
+}
+
+.faq-section:hover {
+  background-color: rgba(241, 245, 249, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ===========================
+   Question
+=========================== */
+.faq-question {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #34495e;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #a855f7;
+}
+
+/* ===========================
+   Answer (Accordion)
+=========================== */
+.faq-answer {
+  font-size: 1.1em;
+  color: #555;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.faq-section.active .faq-answer {
+  max-height: 500px;
+  padding-top: 12px;
+}
+
+/* ===========================
+   Animations
+=========================== */
+@keyframes fadeSlideIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes titleFadeIn {
+  0% { opacity: 0; transform: translateY(-15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 768px) {
+  .faq-container {
+    padding: 25px;
+  }
+
+  .faq-title {
+    font-size: 2em;
+  }
+
+  .faq-question {
+    font-size: 1.3em;
+  }
+}
